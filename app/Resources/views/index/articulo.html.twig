@@ -1,0 +1,16 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+    <h1>//a) Muestra todos los artículos de un pedido según la id del pedido</h1>
+    {% for a in articulos %}
+        <div>
+            <h2>Id:</h2> {{ a.id }}
+            <h2>Nombre:</h2> {{ a.nombre }}
+            <h2>Precio:</h2> {{ a.precio }}
+        </div>
+
+    {% endfor %}
+
+{% endblock %}
+
+

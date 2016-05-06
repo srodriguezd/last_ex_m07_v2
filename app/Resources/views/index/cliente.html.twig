@@ -1,0 +1,16 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+
+    <h1>//a) Selecciona todos los clientes que tengan un pedido de valor superior a 30€</h1>
+
+    {% for c in clientes %}
+
+        <div>
+            <h2>Nombre:</h2> {{ c.nombre }}
+            <h2>Precio:</h2> {{ c.precio }}
+        </div>
+
+    {% endfor %}
+
+{% endblock %}
