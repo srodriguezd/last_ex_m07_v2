@@ -13,7 +13,7 @@ class pedidoRepository extends \Doctrine\ORM\EntityRepository
     {
         return $this->createQueryBuilder('p')
             ->select('cliente.nombre', 'p.id', 'p.createdAt', 'p.precio' )
-            ->leftJoin('p.cliente', 'cliente')
+            ->leftJoin('p.clientes', 'cliente')
             ->andWhere('cliente.id = :id')
             ->setParameter('id', $id)
             ->addOrderBy('p.createdAt', 'DESC')
