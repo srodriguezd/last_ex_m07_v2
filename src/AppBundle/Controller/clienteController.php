@@ -20,8 +20,10 @@ class clienteController extends Controller{
         ]);
         return $response;
     }
+     *
+     * Está operativo en el index controller
 
-*/
+     */
 
 
 }
