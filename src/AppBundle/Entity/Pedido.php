@@ -31,7 +31,7 @@ class Pedido
     /**
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Cliente", inversedBy="pedidos")
      */
-    private $cliente;
+    private $clientes;
     /**
      * @var \DateTime
      *
@@ -47,6 +47,7 @@ class Pedido
 
     public function __construct()
     {
+        $this->clientes = new ArrayCollection();
         $this->articulos    = new ArrayCollection();
 
         $this->createdAt = new \DateTime();
@@ -159,5 +160,50 @@ class Pedido
     public function getArticulos()
     {
         return $this->articulos;
+    }
+
+
+    /**
+     * Set cliente
+     *
+     * @param \Appbundle\Entity\Cliente $cliente
+     *
+     * @return Pedido
+     */
+    public function setCliente(\Appbundle\Entity\Cliente $cliente = null)
+    {
+        $this->clientes = $cliente;
+        return $this;
+    }
+    /**
+     * Get cliente
+     *
+     * @return \Appbundle\Entity\Cliente
+     */
+    public function getCliente()
+    {
+        return $this->clientes;
+    }
+    /**
+     * añadir cliente
+     *
+     * @param \Appbundle\Entity\Cliente $cliente
+     *
+     * @return Pedido
+     */
+    public function añadirCliente(\Appbundle\Entity\Cliente $cliente)
+    {
+        $this->clientes[] = $cliente;
+        return $this;
+    }
+
+    /**
+     * borrar cliente
+     *
+     * @param \Appbundle\Entity\Cliente $cliente
+     */
+    public function borrarCliente(\Appbundle\Entity\Cliente $cliente)
+    {
+        $this->clientes->removeElement($cliente);
     }
 }

@@ -1,5 +1,19 @@
 {% extends '::base.html.twig' %}
 
 {% block body %}
-    <h1>New Project Created</h1>
+
+
+    <h1>//a) Selecciona todos los clientes que tengan un pedido de valor superior a 30€</h1>
+
+    {% for cliente in clientes %}
+
+        <div>
+            <h2>Nombre:</h2> {{ cliente.nombre }}
+            <h2>Precio:</h2> {{ cliente.precio }}
+        </div>
+
+    {% endfor %}
+
+
+
 {% endblock %}

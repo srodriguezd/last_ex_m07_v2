@@ -28,4 +28,7 @@ class articuloController extends Controller{
 
 
 
+
+
+
 }

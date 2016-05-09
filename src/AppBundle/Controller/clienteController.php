@@ -8,20 +8,20 @@ use Symfony\Component\HttpFoundation\Request;
 class clienteController extends Controller{
 
     /**
-     * @Route("/cliente/{id}", name="app_clientes")
-     */
+     * @Route("/articulo/{id}", name="app_articulos")
+
     public function clienteAction()
     {
         $m = $this->getDoctrine()->getManager();
         $clienteRepository = $m->getRepository('AppBundle:Cliente');
         $clientes = $clienteRepository->supTreinta();
-        $response = $this->render(':index:cliente.html.twig', [
+        $response = $this->render(':index:articulo.html.twig', [
             'clientes' => $clientes
         ]);
         return $response;
     }
 
-
+*/
 
 
 }

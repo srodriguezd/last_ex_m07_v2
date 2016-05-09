@@ -11,8 +11,9 @@ class clienteRepository extends \Doctrine\ORM\EntityRepository
     //a) Selecciona todos los clientes que tengan un pedido de valor superior a 30€
     public function supTreinta()
     {
-        return $this->createQueryBuilder('c')
-            ->leftJoin('c.pedido', 'pedido')
+        return $this->createQueryBuilder('cliente')
+            ->select('cliente.nombre', 'pedido.precio')
+            ->leftJoin('cliente.pedidos', 'pedido')
             ->addOrderBy('pedido.createdAt', 'DESC')
             ->andWhere('pedido.precio>30')
             ->getQuery()

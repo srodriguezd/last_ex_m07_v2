@@ -1,6 +1,7 @@
 <?php
 namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
+use \Doctrine\Common\Collections\ArrayCollection;
 /**
  * Cliente
  *
@@ -25,7 +26,7 @@ class Cliente
      */
     private $nombre;
     /**
-     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Pedido", mappedBy="cliente", cascade={"remove"})
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Pedido", mappedBy="clientes", cascade={"remove"})
      */
     private $pedidos;
     /**
